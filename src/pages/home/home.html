@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>WakeMeUp</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        clocks Coming
+        <ion-item (click)=ClockDate() *ngFor="let clock of Clocks">
+            <ion-avatar item-start>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61n252YpctL.png">
+            </ion-avatar>
+            <h2>{{getTime(clock.time)}}</h2>
+            <h3>{{clock.description}}</h3>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        clocks passed
+        <ion-item *ngFor="let clock of Clocks">
+            <ion-avatar item-start>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61n252YpctL.png">
+            </ion-avatar>
+            <h2>{{getTime(clock.time)}}</h2>
+            <h3>{{clock.description}}</h3>
+        </ion-item>
+        <button (click)="newClock()" style="border-radius: 100%; width: 60px; height: 60px; background-color: #869fa3; position: absolute; top: 88%; right: 42%;  box-shadow: 1px 1px 8px #888888;"><font style="font-size: 30px;color: white;">+</font></button>
+    </ion-list>
+</ion-content>
